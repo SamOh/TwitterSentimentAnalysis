@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+import sys
+import helpers as hp
+from analyzer import Analyzer
+from termcolor import colored
+
+def main():
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @twitterhandle")
+        
+    # save twitter name from command line
+    screen_name = sys.argv[1]
+    
+    # query tweets with helper function
+    list_of_tweets = hp.get_user_timeline(screen_name, 50)
+    
+    for tweet in list_of_tweets:
+        score = Analyzer().analyze(tweet)
+        if score > 0.0:
+            print(score, colored(tweet, "green"))
+        elif score < 0.0:
+            print(score, colored(tweet, "red"))
+        else:
+            print(score, colored(tweet, "yellow"))
+    
+
+if __name__ == "__main__":
+    main()
