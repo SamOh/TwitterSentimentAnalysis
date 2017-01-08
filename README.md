@@ -1,6 +1,6 @@
 # twitter_sentiment_analysis
-Currently staff for CS50 class at Harvard. This year, we are offering a new problem set\
-so as a staff member I tested it out by implementing a solution to it.\
+Currently staff for CS50 class at Harvard. This year, we are offering a new problem set
+so as a staff member I tested it out by implementing a solution to it.
 Idea/framework for this specific project goes to CS50.
 
 # How it works
